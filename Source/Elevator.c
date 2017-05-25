@@ -1,5 +1,3 @@
-
-
 int SC_Cmd_EC  (uint_8 Enable, uint_8 Floor){
   CANmsg_t CANmsg;
 
@@ -14,7 +12,7 @@ int SC_Cmd_EC  (uint_8 Enable, uint_8 Floor){
   return(0)
 }
 
-int EC_STATUS  (uint_8 Status, uint_8 Position){
+int EC_Status  (uint_8 Status, uint_8 Position){
   CANmsg_t CANmsg;
 
   CANmsg.id = EC_ID;
@@ -28,7 +26,7 @@ int EC_STATUS  (uint_8 Status, uint_8 Position){
   return(0)
 }
 
-int CC_STATUS  (uint_8 DoorState, uint_8 FloorReq){
+int CC_Status  (uint_8 DoorState, uint_8 FloorReq){
   CANmsg_t CANmsg;
 
   CANmsg.id = CC_ID;
@@ -42,7 +40,7 @@ int CC_STATUS  (uint_8 DoorState, uint_8 FloorReq){
   return(0)
 }
 
-int F1_STATUS  (uint_8 Status){
+int F1_Status  (uint_8 Status){
   CANmsg_t CANmsg;
 
   CANmsg.id = F1_ID;
@@ -56,7 +54,7 @@ int F1_STATUS  (uint_8 Status){
   return(0)
 }
 
-int F2_STATUS  (uint_8 Status){
+int F2_Status  (uint_8 Status){
   CANmsg_t CANmsg;
 
   CANmsg.id = F2_ID;
@@ -70,7 +68,7 @@ int F2_STATUS  (uint_8 Status){
   return(0)
 }
 
-int F3_STATUS  (uint_8 Status){
+int F3_Status  (uint_8 Status){
   CANmsg_t CANmsg;
 
   CANmsg.id = F3_ID;
@@ -82,4 +80,16 @@ int F3_STATUS  (uint_8 Status){
     return(-1)
   }
   return(0)
+}
+//listen for SC
+int EC_Init    (void){
+  MSCAN_ListenForMsg(SC_ID);
+}
+//listen for EC
+int CC_Init    (void){
+  MSCAN_ListenForMsg(EC_ID);
+}
+//listen for EC
+int F_Init     (void){
+  MSCAN_ListenForMsg(EC_ID);
 }

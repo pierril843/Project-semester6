@@ -1,7 +1,7 @@
 // CAN.h
 // Header file for HCS12 MSCAN
-#ifndef _CAN_H
-#define _CAN_H
+#ifndef _ELEVATOR_H
+#define _ELEVATOR_H
 #include "CAN.h"
 #include "Elevator.c"
 
@@ -36,9 +36,13 @@
 #define LOW           0x01
 
 extern int SC_Cmd_EC  (uint_8 Enable, uint_8 Floor);
-extern int EC_STATUS  (uint_8 Status, uint_8 Position);
-extern int CC_STATUS  (uint_8 DoorState, uint_8 FloorReq);
-extern int F1_STATUS  (uint_8 Status);
-extern int F2_STATUS  (uint_8 Status);
-extern int F3_STATUS  (uint_8 Status);
+extern int EC_Status  (uint_8 Status, uint_8 Position);
+extern int CC_Status  (uint_8 DoorState, uint_8 FloorReq);
+extern int F1_Status  (uint_8 Status);
+extern int F2_Status  (uint_8 Status);
+extern int F3_Status  (uint_8 Status);
+
+extern int EC_Init    (void);
+extern int CC_Init    (void);
+extern int F_Init     (void);
 #endif
