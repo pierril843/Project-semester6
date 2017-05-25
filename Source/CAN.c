@@ -86,7 +86,7 @@ int MSCAN_GotMsg(void) {
   return ( BIT_IS_SET( CANRFLG, CANRFLG_RXF_MASK ) );
 }
 
-CANmsg_t MSCAN_Getd() {
+CANmsg_t MSCAN_Getd(void) {
   CANmsg_t = CANmsg;
   uint_16 index;
   uint_8 *dataPtr;

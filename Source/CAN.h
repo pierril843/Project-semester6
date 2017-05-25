@@ -16,10 +16,12 @@ typedef struct {
 } CANmsg_t;
 
 extern void MSCAN_Init( void);
-extern int MSCAN_Putd( uint_32 id, uint_8 * data, uint_8 len, uint_8 priority);
-extern void MSCAN_Getd( void);
+extern int MSCAN_Putd( CANmsg_t CANmsg, uint_8 priority);
+CANmsg_t MSCAN_Getd( void);
 extern void MSCAN_ListenForMsg( uint_32 id);
 extern int MSCAN_GotMsg( void);
+extern void MSCAN_SetNormMode ( void)
+extern void MSCAN_SetInitMode ( void)
 
 
 #endif
