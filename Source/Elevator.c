@@ -5,7 +5,7 @@ int SC_Cmd_EC  (uint_8 Enable, uint_8 Floor){
   CANmsg.data[0] = (Enable << 2) | (Floor);
   CANmsg.length = 1;
 
-  if (MSCAN_Putd(CANmsg, MID) != 1){}
+  if (MSCAN_Putd(CANmsg, MID) != 1){
     //failed to send
     return(-1)
   }
@@ -19,7 +19,7 @@ int EC_Status  (uint_8 Status, uint_8 Position){
   CANmsg.data[0] = (Status << 2) | (Position);
   CANmsg.length = 1;
 
-  if (MSCAN_Putd(CANmsg, MID) != 1){}
+  if (MSCAN_Putd(CANmsg, MID) != 1){
     //failed to send
     return(-1)
   }
@@ -33,7 +33,7 @@ int CC_Status  (uint_8 DoorState, uint_8 FloorReq){
   CANmsg.data[0] = (DoorState << 2) | (FloorReq);
   CANmsg.length = 1;
 
-  if (MSCAN_Putd(CANmsg, MID) != 1){}
+  if (MSCAN_Putd(CANmsg, MID) != 1){
     //failed to send
     return(-1)
   }
@@ -47,7 +47,7 @@ int F1_Status  (uint_8 Status){
   CANmsg.data[0] = Status;
   CANmsg.length = 1;
 
-  if (MSCAN_Putd(CANmsg, MID) != 1){}
+  if (MSCAN_Putd(CANmsg, MID) != 1){
     //failed to send
     return(-1)
   }
@@ -61,7 +61,7 @@ int F2_Status  (uint_8 Status){
   CANmsg.data[0] = Status;
   CANmsg.length = 1;
 
-  if (MSCAN_Putd(CANmsg, MID) != 1){}
+  if (MSCAN_Putd(CANmsg, MID) != 1){
     //failed to send
     return(-1)
   }
@@ -75,7 +75,7 @@ int F3_Status  (uint_8 Status){
   CANmsg.data[0] = Status;
   CANmsg.length = 1;
 
-  if (MSCAN_Putd(CANmsg, MID) != 1){}
+  if (MSCAN_Putd(CANmsg, MID) != 1){
     //failed to send
     return(-1)
   }

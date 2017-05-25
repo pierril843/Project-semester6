@@ -21,7 +21,7 @@
 #define DOOR_OPEN         0x00
 #define DOOR_CLOSED       0x01
 
-#define DOOR_OPEN         0x00
+//#define DOOR_OPEN         0x00
 #define REQUEST_CAR       0x01
 
 #define SC_ID         0x100
