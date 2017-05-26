@@ -1,5 +1,6 @@
 #include <hidef.h>        /* common defines and macros */
 #include "derivative.h"   /* derivative-specific definitions */
+#include "CAN.h"
 
 void MSCAN_Init(void) {
   // turn on module and force into init mode
@@ -38,7 +39,7 @@ int MSCAN_Putd( CANmsg_t CANmsg, uint_8 priority) {
   // copy data to transmit data buffer registers
   CAN_TxDataPtr = &CANTXDSR0;
   for (i = 0; i < CANmsg.length; i++)
-    *CAN_TxDataPtr++ = *(CANmsg.data)++;
+    *CAN_TxDataPtr++ = CANmsg.data[i];
   // load the data buffer size into tx size register
   CANTXDLR = CANmsg.length;
   // load the local message priority into tx local priority register
@@ -58,8 +59,8 @@ void MSCAN_ListenForMsg(uint_32 id) {
   // set up acceptance filter registers
   CANIDAC = 0;	// setup for 2 32-bit filters - all bits significant
   // filter 1 - standard identifier
-  CAN_IdBuffer = ((id & 0x07ff) << (32-11))
-  | (((uint_32)rtr & 0x01) << (32 - 11 - 1));
+  CAN_IdBuffer = ((id & 0x07ff) << (32-11));
+  
 
   CAN_IdRegPtr = (uint_32 *)(&CANIDAR0);
   *CAN_IdRegPtr = CAN_IdBuffer;
@@ -87,17 +88,18 @@ int MSCAN_GotMsg(void) {
 }
 
 CANmsg_t MSCAN_Getd(void) {
-  CANmsg_t = CANmsg;
-  uint_16 index;
+  CANmsg_t CANmsg;
+  //uint_16 index;
   uint_8 *dataPtr;
+  uint_16 i = 0;
 
-  CANmsg.id = *((U16 *)(&CANRXIDR0))>>5;
+  CANmsg.id = *((uint_16 *)(&CANRXIDR0))>>5;
 
   CANmsg.length = CANRXDLR;
   dataPtr = (uint_8 *)(&CANRXDSR0);
 
-  for (i = 0; index < length; i++)
-    CANmsg.data[index] = *dataPtr++;
+  for (i = 0; i < CANmsg.length; i++)
+    CANmsg.data[i] = *dataPtr++;
 
   SET_BITS( CANRFLG, CANRFLG_RXF_MASK );
   return(CANmsg);

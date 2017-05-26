@@ -1,4 +1,8 @@
-int SC_Cmd_EC  (uint_8 Enable, uint_8 Floor){
+#include "Elevator.h"
+#include "Macros.h"
+
+
+int SC_Cmd_EC(uint_8 Enable, uint_8 Floor){
   CANmsg_t CANmsg;
 
   CANmsg.id = SC_ID;
@@ -7,9 +11,9 @@ int SC_Cmd_EC  (uint_8 Enable, uint_8 Floor){
 
   if (MSCAN_Putd(CANmsg, MID) != 1){
     //failed to send
-    return(-1)
+    return(-1);
   }
-  return(0)
+  return(0);
 }
 
 int EC_Status  (uint_8 Status, uint_8 Position){
@@ -21,9 +25,9 @@ int EC_Status  (uint_8 Status, uint_8 Position){
 
   if (MSCAN_Putd(CANmsg, MID) != 1){
     //failed to send
-    return(-1)
+    return(-1);
   }
-  return(0)
+  return(0);
 }
 
 int CC_Status  (uint_8 DoorState, uint_8 FloorReq){
@@ -35,9 +39,9 @@ int CC_Status  (uint_8 DoorState, uint_8 FloorReq){
 
   if (MSCAN_Putd(CANmsg, MID) != 1){
     //failed to send
-    return(-1)
+    return(-1);
   }
-  return(0)
+  return(0);
 }
 
 int F1_Status  (uint_8 Status){
@@ -49,9 +53,9 @@ int F1_Status  (uint_8 Status){
 
   if (MSCAN_Putd(CANmsg, MID) != 1){
     //failed to send
-    return(-1)
+    return(-1);
   }
-  return(0)
+  return(0);
 }
 
 int F2_Status  (uint_8 Status){
@@ -63,9 +67,9 @@ int F2_Status  (uint_8 Status){
 
   if (MSCAN_Putd(CANmsg, MID) != 1){
     //failed to send
-    return(-1)
+    return(-1);
   }
-  return(0)
+  return(0);
 }
 
 int F3_Status  (uint_8 Status){
@@ -77,9 +81,9 @@ int F3_Status  (uint_8 Status){
 
   if (MSCAN_Putd(CANmsg, MID) != 1){
     //failed to send
-    return(-1)
+    return(-1);
   }
-  return(0)
+  return(0);
 }
 //listen for SC
 int EC_Init    (void){
