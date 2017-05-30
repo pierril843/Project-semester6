@@ -12,10 +12,10 @@ void MSCAN_Init(void) {
   // set up registers to control MSCAN operation
   CANCTL1 = CANCTL1_INIT;
   CANBTR0 = CANBTR0_INIT;
-  CANBTR1 = CANBTR1_INIT;
-
+  CANBTR1 = CANBTR1_INIT;  
   // all done - leave init mode and enter normal mode
   CLR_BITS( CANCTL0, CANCTL0_INITRQ_MASK );             // turn off the init mode request flag
+                          // Enable CAN receive interrupt
   while( BIT_IS_SET( CANCTL1, CANCTL1_INITAK_MASK ) );  // wait for module to exit init mode
 }
 
