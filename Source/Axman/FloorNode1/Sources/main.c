@@ -51,7 +51,7 @@ void main(void) {
     if (PTJ == BUTTON_IS_PRESSED && buttonLock == 0)
       {
         PORTA |= FLOOR_REQUESTED_LED_MASK;
-        i = F2_Status(0x03);
+        i = F1_Status(0x01);
         buttonLock = 1;
       }
           
@@ -61,17 +61,17 @@ void main(void) {
       msg = MSCAN_Getd();
       floorLocation = msg.data[0];
       
-      if (floorLocation == 0x01)
+      if ((floorLocation & 0b00000011) == 0x01)
         {
           FORCE_BITS(PORTA, LEDS_PORT_MASK, FLOOR1_LED_MASK); 
           PORTA &= ~FLOOR_REQUESTED_LED_MASK;
           buttonLock = 0;          
         }
-        else if (floorLocation == 0x02)
+        else if ((floorLocation & 0b00000011) == 0x02)
         {
           FORCE_BITS(PORTA, LEDS_PORT_MASK, FLOOR2_LED_MASK);          
         }
-        else if (floorLocation == 0x03)
+        else if ((floorLocation & 0b00000011) == 0x03)
         {
           FORCE_BITS(PORTA, LEDS_PORT_MASK, FLOOR3_LED_MASK);          
         }          
