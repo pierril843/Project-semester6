@@ -1,0 +1,56 @@
+body{font-family: georgia, serif;
+     margin: auto;
+     width: 950px;
+     height: auto;
+     padding: 10px 10px 10px 10px;
+     border: 2px solid black;}
+
+p,ul {font-size: 100%;
+      line-height: 20px;
+      text-align: justify;}
+
+p {text-indent: 15px;}
+
+h1 {font-size: 160%;}
+
+h2 {font-size: 125%;}
+
+figure{border: 2px solid black;
+       border-radius: 10px;
+       text-align: center;}
+
+img{margin: auto;
+    border: 2px solid blue;
+    height: 300px;
+    box-shadow: 10px 10px 5px #888888;}
+
+figcaption{text-align: center;
+           font-style: italic;
+           font-size: 90%;}
+
+table{border-spacing: 3px;
+      text-align: center;
+      border: 2px solid black;
+      empty-cells: show;
+      }
+
+thead{border: 2px solid black;}
+tbody{border: 2px solid black;}
+tr{border: 2px solid black;}
+th{border: 2px solid black;}
+td{border: 2px solid black;}
+
+.mkunderlined{text-decoration: underline;}
+
+.mkbold{font-weight: bold;}
+
+.Josh{background-color: blue;
+      color: white;}
+.Ryan{background-color: purple;
+      color: white;}
+.Riley{background-color: red;
+      color: white;}
+
+#can{font-weight: bold;}
+
+#hcs12{font-weight: bold;}
