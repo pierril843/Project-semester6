@@ -3,7 +3,8 @@ body{font-family: georgia, serif;
      width: 950px;
      height: auto;
      padding: 10px 10px 10px 10px;
-     border: 2px solid black;}
+     border: 2px solid black;
+     background-color: #fff4e6;}
 
 p,ul {font-size: 100%;
       line-height: 20px;
@@ -30,15 +31,18 @@ figcaption{text-align: center;
 
 table{border-spacing: 3px;
       text-align: center;
-      border: 2px solid black;
+      border: 2px solid #3c2f2f;
       empty-cells: show;
       }
 
-thead{border: 2px solid black;}
-tbody{border: 2px solid black;}
-tr{border: 2px solid black;}
-th{border: 2px solid black;}
-td{border: 2px solid black;}
+thead{border: 2px solid #3c2f2f;}
+tbody{border: 2px solid #3c2f2f;}
+tr{border: 2px solid #3c2f2f;}
+th{border: 2px solid #3c2f2f;}
+td{border: 2px solid #3c2f2f;}
+
+td:hover{background-color: #3c2f2f;
+         color: white;}
 
 .mkunderlined{text-decoration: underline;}
 

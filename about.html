@@ -2,43 +2,77 @@
 <html lang="en">
   <head>
     <title>About Project</title>
+    <meta charset="utf-8" />
+    <meta name = "viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="author" content="Riley Pierce, Josh Perry, Ryan Furry"  />
-    <meta http-equiv="pragma" content="no-cashe"  />
+    <meta http-equiv="pragma" content="no-cache"  />
     <meta name="description" content="this page is about our poject"/>
     <meta name="robots" content="noindex nofollow"/>
-    </head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="css/colour_palette.css" type="text/css" rel="stylesheet" />
+  </head>
   <body>
-    <h1>Page is under construction</h1>
-    <h2>About the Project</h2>
-    <p>The overall project plan (to be completed in 3 phases) is to control an elevator, leveraging the use of a CAN bus communications environment, coupled with networked systems to create a means of tracking the elevator’s operational/diagnostics data. The elevator car’s position and status must also be viewable to computers over the Internet.</p>
-    <p>Our names are Joshua B. Perry, Ryan J. M. Furry, and Robert R. Pierce</p>
-    <hr />
-    <h2>The Team</h2>
-    <ul>
-      <li>Joshua B. Perry</li>
-      <ul>
-        <li>He does some good stuff</li>
-      </ul>
-      <li>Ryan J. M. Furry</li>
-      <ul>
-        <li>He does some good work</li>
-      </ul>
-      <li>Robert R. Piece</li>
-      <ul>
-        <li>He does some good work stuff</li>
-      </ul>
-    </ul>
-    <h2>Location</h2>
-    <iframe
-    width="500"
-    height="500"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2899.558706849663!2d-80.40007202415308!3d43.38625043522835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd5e712873de8af2d!2sConestoga+College+-+Cambridge+Campus!5e0!3m2!1sen!2sca!4v1495644398811"
-    allowfullscreen
-    seamless>
-  </iframe>
-  <br />
-  <p>
-    This Page is &copy By JRR
-  </p>
+    <div id="page" class="container">
+      <header>
+        <div class="row">
+          <div class = "col-xs-4">
+            <img id="logo" src="Images/JRR-logo.png" />
+          </div>
+          <div class = "col-xs-8">
+            <nav>
+              <ul id="header_menu">
+                <li class="h_menu"><a class="menu" href="about.html">About</a></li>
+                <li class="h_menu"><a class="menu" href="plan.html">Plan</a></li>
+                <li class="h_menu"><a class="menu" href="Logbook/Rileylogbook.html">Logbooks</a></li>
+                <li class="h_menu"><a class="menu" href="about.html">Login</a></li>
+              </ul>
+            </nav>
+          </div><!--header menu div-->
+        </div><!--class = row -->
+      </header>
+      <div id="content">
+        <article>
+          <h2>About the Project</h2>
+          <p>The overall project plan (to be completed in 3 phases) is to control an elevator, leveraging the use of a CAN bus communications environment, coupled with networked systems to create a means of tracking the elevator's operational/diagnostics data. The elevator car's position and status must also be viewable to computers over the Internet.</p>
+          <p>Our names are Joshua B. Perry, Ryan J. M. Furry, and Robert R. Pierce</p>
+        </article>
+        <article>
+          <h2>The Team</h2>
+          <ul>
+            <li>Joshua B. Perry</li>
+            <ul>
+              <li>He does some good stuff</li>
+            </ul>
+            <li>Ryan J. M. Furry</li>
+            <ul>
+              <li>He does some good work</li>
+            </ul>
+            <li>Robert R. Piece</li>
+            <ul>
+              <li>He does some good work stuff</li>
+            </ul>
+          </ul>
+        </article>
+        <article>
+          <h2>Location</h2>
+          <iframe
+          width="500"
+          height="500"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2899.558706849663!2d-80.40007202415308!3d43.38625043522835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd5e712873de8af2d!2sConestoga+College+-+Cambridge+Campus!5e0!3m2!1sen!2sca!4v1495644398811"
+          allowfullscreen
+          seamless>
+          </iframe>
+        </article>
+      </div><!-- id=content -->
+      <footer>
+        <p>
+          This Page is &copy By JRR
+        </p>
+      </footer>
+    </div><!-- id=page -->
   </body>
 </html>
