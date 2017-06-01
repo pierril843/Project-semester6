@@ -36,6 +36,8 @@ def FloorRequest(ret, buff):
     elif (ret[1].ID == Car_ID):
         if ((ret[1].DATA[0] & 0b00000011)):
             buff.DATA[0] = (0b00000100 | (ret[1].DATA[0] & 0b00000011))
+            if ((~ret[1].DATA[0]) & 0b0000000100):
+                print("WARNING: freight Car Door open detected. this is not safe! but continuen ;p")
             pcb.Write(PCAN_USBBUS1,buff)
             return(ret[1].DATA[0] & 0b00000011)
     else:
@@ -65,8 +67,9 @@ while(TRUE):
             #if is is the elevator then we can compare if we are at the floor yet
             i = (ret[1].DATA[0] &0b00000011)# temp var but this mask removes the en form the message 
             if ((ret[1].DATA[0] &0b00000011) == DESTINATION):
-                print("the evevator reached its destination\n" )
-                BUSY = FALSE
+                if (BUSY == TRUE):
+                    print("UPDATE:The freight elevator has reached its destination" )
+                    BUSY = FALSE
         if ((ret[1].ID == Floor1_ID) or \
             (ret[1].ID == Floor2_ID) or \
             (ret[1].ID == Floor3_ID) or \
@@ -75,7 +78,7 @@ while(TRUE):
                 req = FloorRequest(ret,buff)
                 if (req != 0):#meaning it send a req
                     BUSY = TRUE
-                    print("the evevator is in transit to" + str(req) + "\n")
+                    print("UPDATE:The freight elevator is in transit to floor " + str(req))
                     DESTINATION = req
 
 pcb.Uninitialize(PCAN_USBBUS1)
