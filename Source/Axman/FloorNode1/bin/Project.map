@@ -1,5 +1,5 @@
 *** EVALUATION ***
-PROGRAM "C:\Users\rfurry3774\Desktop\FloorNode1\bin\Project.abs"
+PROGRAM "C:\Git\Project-semester6\Source\Axman\FloorNode1\bin\Project.abs"
 
 *********************************************************************************************
 TARGET SECTION
@@ -27,7 +27,7 @@ _startupData is allocated at 0xC031 and uses 6 Bytes
 extern struct _tagStartup {
   unsigned nofZeroOut     1
   _Range   pZeroOut       0x900     1
-  _Copy    *toCopyDownBeg 0xC254
+  _Copy    *toCopyDownBeg 0xC25B
 } _startupData;
 
 *********************************************************************************************
@@ -36,8 +36,8 @@ Section Name                    Size  Type     From       To       Segment
 ---------------------------------------------------------------------------------------------
 .init                             49     R     0xC000     0xC030   ROM_C000
 .startData                        10     R     0xC031     0xC03A   ROM_C000
-.text                            512     R     0xC03B     0xC23A   ROM_C000
-.copy                              2     R     0xC254     0xC255   ROM_C000
+.text                            519     R     0xC03B     0xC241   ROM_C000
+.copy                              2     R     0xC25B     0xC25C   ROM_C000
 .stack                           256   R/W      0x800      0x8FF   RAM
 .abs_section_8                     1   N/I        0x8        0x8   .absSeg0
 .abs_section_9                     1   N/I        0x9        0x9   .absSeg1
@@ -261,11 +261,11 @@ Section Name                    Size  Type     From       To       Segment
 .abs_section_16e                   2   N/I      0x16E      0x16F   .absSeg219
 .abs_section_17e                   2   N/I      0x17E      0x17F   .absSeg220
 .common                            1   R/W      0x900      0x900   RAM
-RUNTIME                           25     R     0xC23B     0xC253   ROM_C000
+RUNTIME                           25     R     0xC242     0xC25A   ROM_C000
 .vectSeg221_vect                   2     R     0xFFFE     0xFFFF   .vectSeg221
 
 Summary of section sizes per section type:
-READ_ONLY (R):         258 (dec:      600)
+READ_ONLY (R):         25F (dec:      607)
 READ_WRITE (R/W):      101 (dec:      257)
 NO_INIT (N/I):         104 (dec:      260)
 
@@ -450,7 +450,7 @@ MODULE:                 -- mc9s12c32.c.o --
      _PPSP                                      25D       1       1       0   .abs_section_25d
      _PIEP                                      25E       1       1       0   .abs_section_25e
      _PIFP                                      25F       1       1       0   .abs_section_25f
-     _PTJ                                       268       1       1       1   .abs_section_268
+     _PTJ                                       268       1       1       2   .abs_section_268
      _PTIJ                                      269       1       1       0   .abs_section_269
      _DDRJ                                      26A       1       1       1   .abs_section_26a
      _RDRJ                                      26B       1       1       0   .abs_section_26b
@@ -505,7 +505,7 @@ MODULE:                 -- mc9s12c32.c.o --
      _CANTXTSR                                  17E       2       2       0   .abs_section_17e
 MODULE:                 -- main.c.o --
 - PROCEDURES:
-     main                                      C03B      A5     165       1   .text       
+     main                                      C03B      AC     172       1   .text       
 - VARIABLES:
      floorLocation                              900       1       1       4   .common     
 MODULE:                 -- Start12.c.o --
@@ -518,22 +518,22 @@ MODULE:                 -- Start12.c.o --
      __SEG_END_SSTACK                           900       0       0       1               
 MODULE:                 -- rtshc12.c.o (ansisi.lib) --
 - PROCEDURES:
-     _LSHL                                     C23B      11      17       2   RUNTIME     
-     _COPY                                     C24C       8       8       2   RUNTIME     
+     _LSHL                                     C242      11      17       2   RUNTIME     
+     _COPY                                     C253       8       8       2   RUNTIME     
 - VARIABLES:
 MODULE:                 -- CAN.c.o --
 - PROCEDURES:
-     MSCAN_Init                                C0E0      2A      42       1   .text       
-     MSCAN_Putd                                C10A      59      89       1   .text       
-     MSCAN_ListenForMsg                        C163      28      40       1   .text       
-     MSCAN_SetInitMode                         C18B      1D      29       1   .text       
-     MSCAN_SetNormMode                         C1A8      13      19       1   .text       
-     MSCAN_GotMsg                              C1BB       7       7       1   .text       
-     MSCAN_Getd                                C1C2      47      71       1   .text       
+     MSCAN_Init                                C0E7      2A      42       1   .text       
+     MSCAN_Putd                                C111      59      89       1   .text       
+     MSCAN_ListenForMsg                        C16A      28      40       1   .text       
+     MSCAN_SetInitMode                         C192      1D      29       1   .text       
+     MSCAN_SetNormMode                         C1AF      13      19       1   .text       
+     MSCAN_GotMsg                              C1C2       7       7       1   .text       
+     MSCAN_Getd                                C1C9      47      71       1   .text       
 - VARIABLES:
 MODULE:                 -- Elevator.c.o --
 - PROCEDURES:
-     F1_Status                                 C209      32      50       1   .text       
+     F1_Status                                 C210      32      50       1   .text       
 - VARIABLES:
 
 *********************************************************************************************
@@ -541,7 +541,7 @@ MODULE STATISTIC
   Name                                      Data   Code  Const
 ---------------------------------------------------------------------------------------------
   mc9s12c32.c.o                              260      0      0
-  main.c.o                                     1    165      0
+  main.c.o                                     1    172      0
   Start12.c.o                                  0     49      0
   rtshc12.c.o (ansisi.lib)                     0     25      0
   CAN.c.o                                      0    297      0
@@ -1214,7 +1214,7 @@ OBJECT LIST SORTED BY ADDRESS
      _PPSP                                      25D       1       1       0   .abs_section_25d
      _PIEP                                      25E       1       1       0   .abs_section_25e
      _PIFP                                      25F       1       1       0   .abs_section_25f
-     _PTJ                                       268       1       1       1   .abs_section_268
+     _PTJ                                       268       1       1       2   .abs_section_268
      _PTIJ                                      269       1       1       0   .abs_section_269
      _DDRJ                                      26A       1       1       1   .abs_section_26a
      _RDRJ                                      26B       1       1       0   .abs_section_26b
@@ -1231,17 +1231,17 @@ OBJECT LIST SORTED BY ADDRESS
      floorLocation                              900       1       1       4   .common     
      Init                                      C000      29      41       1   .init       
      _Startup                                  C029       8       8       0   .init       
-     main                                      C03B      A5     165       1   .text       
-     MSCAN_Init                                C0E0      2A      42       1   .text       
-     MSCAN_Putd                                C10A      59      89       1   .text       
-     MSCAN_ListenForMsg                        C163      28      40       1   .text       
-     MSCAN_SetInitMode                         C18B      1D      29       1   .text       
-     MSCAN_SetNormMode                         C1A8      13      19       1   .text       
-     MSCAN_GotMsg                              C1BB       7       7       1   .text       
-     MSCAN_Getd                                C1C2      47      71       1   .text       
-     F1_Status                                 C209      32      50       1   .text       
-     _LSHL                                     C23B      11      17       2   RUNTIME     
-     _COPY                                     C24C       8       8       2   RUNTIME     
+     main                                      C03B      AC     172       1   .text       
+     MSCAN_Init                                C0E7      2A      42       1   .text       
+     MSCAN_Putd                                C111      59      89       1   .text       
+     MSCAN_ListenForMsg                        C16A      28      40       1   .text       
+     MSCAN_SetInitMode                         C192      1D      29       1   .text       
+     MSCAN_SetNormMode                         C1AF      13      19       1   .text       
+     MSCAN_GotMsg                              C1C2       7       7       1   .text       
+     MSCAN_Getd                                C1C9      47      71       1   .text       
+     F1_Status                                 C210      32      50       1   .text       
+     _LSHL                                     C242      11      17       2   RUNTIME     
+     _COPY                                     C253       8       8       2   RUNTIME     
 
 *********************************************************************************************
 UNUSED-OBJECTS SECTION
@@ -1263,7 +1263,7 @@ rtshc12.c.o (ansisi.lib):
 *********************************************************************************************
 COPYDOWN SECTION
 ---------------------------------------------------------------------------------------------
-------- ROM-ADDRESS: 0xC254 ---- SIZE       2 ---
+------- ROM-ADDRESS: 0xC25B ---- SIZE       2 ---
 Filling bytes inserted
  0000
 
@@ -1329,6 +1329,6 @@ STATISTIC SECTION
 
 ExeFile:
 --------
-Number of blocks to be downloaded: 5
-Total size of all blocks to be downloaded: 600
+Number of blocks to be downloaded: 6
+Total size of all blocks to be downloaded: 607
 

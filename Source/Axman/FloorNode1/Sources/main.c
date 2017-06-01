@@ -13,6 +13,7 @@
 #define FLOOR2_LED_MASK 0b00000100
 #define FLOOR1_LED_MASK 0b00000010
 #define BUTTON_IS_PRESSED 0b10000000
+#define BUTTON2_IS_PRESSED 0b01000000
 #define LEDS_PORT_MASK 0b00001110  
 
 uint_8 volatile floorLocation;
@@ -48,7 +49,7 @@ void main(void) {
   //i = MSCAN_Putd(msg,0x05);
   for (;;)
   {
-    if (PTJ == BUTTON_IS_PRESSED && buttonLock == 0)
+    if (((PTJ == BUTTON_IS_PRESSED) || (PTJ == BUTTON2_IS_PRESSED)) && buttonLock == 0)
       {
         PORTA |= FLOOR_REQUESTED_LED_MASK;
         i = F1_Status(0x01);
