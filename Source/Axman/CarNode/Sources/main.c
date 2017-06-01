@@ -66,13 +66,13 @@ for (;;)
     if (PTJ == BUTTON_IS_PRESSED)
       {
         DoorState = OPEN;
-        SET_BITS(PORTA, 0b00000001);    
+        SET_BITS(PORTB, 0b00001000);    
       }
       
     if (PTJ == BUTTON2_IS_PRESSED)
       {
-        DoorState = CLOSED
-        CLR_BITS(PORTA, 0b00000001);   
+        DoorState = CLOSED;
+        CLR_BITS(PORTB, 0b00001000);   
       }  
       
   
