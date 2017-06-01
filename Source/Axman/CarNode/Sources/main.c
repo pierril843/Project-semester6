@@ -8,12 +8,14 @@
 #define LED_DDR_MASK          (DDRS_DDRS2_MASK | DDRS_DDRS3_MASK)   // DDR for LED bits on port S
 #define LED_BITS_INIT         PTS_PTS2_MASK     // initial value written to port S LED bits
 #define BUTTON_IS_PRESSED 0b10000000
+#define BUTTON2_IS_PRESSED 0b01000000
 #define FLOOR3_LED_MASK 0b00001000
 #define FLOOR2_LED_MASK 0b00000100
 #define FLOOR1_LED_MASK 0b00000010
 #define LEDS_PORT_MASK 0b00001110
 #define FLOOR_REQUESTED_LED_MASK 0b00000001  
-
+#define OPEN 0
+#define CLOSED 1
 
 
 void main(void) {
@@ -23,6 +25,7 @@ uint_8 floor3ButtonLock = 0;
 uint_16 i = 0;
 CANmsg_t msg;
 uint_8 volatile floorLocation;
+uint_8 DoorState = 1;
 
 DDRAD = 0b00000000;
 DDRA = 0b11111111;
@@ -42,24 +45,36 @@ for (;;)
       {
         PORTB |= 0b00000001;
         floor1ButtonLock = 1;
-        i = CC_Status(0, 0x01);
+        i = CC_Status(DoorState, 0x01);
         PTS ^= LED_BITS_MASK;
       }
     if (PTAD == 0b10000010 && floor2ButtonLock == 0)
       {
         PORTB |= 0b00000010;
         floor2ButtonLock = 1;
-        i = CC_Status(0, 0x02);
+        i = CC_Status(DoorState, 0x02);
         PTS ^= LED_BITS_MASK;
       }
     if (PTAD == 0b10000100 && floor3ButtonLock == 0)
       {
         PORTB |= 0b00000100;
         floor3ButtonLock = 1;
-        i = CC_Status(0, 0x03);
+        i = CC_Status(DoorState, 0x03);
         PTS ^= LED_BITS_MASK;
       }
-  
+      
+    if (PTJ == BUTTON_IS_PRESSED)
+      {
+        DoorState = OPEN;
+        SET_BITS(PORTA, 0b00000001);    
+      }
+      
+    if (PTJ == BUTTON2_IS_PRESSED)
+      {
+        DoorState = CLOSED
+        CLR_BITS(PORTA, 0b00000001);   
+      }  
+      
   
   if (MSCAN_GotMsg())
       {
