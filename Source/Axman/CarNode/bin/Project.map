@@ -1,5 +1,5 @@
 *** EVALUATION ***
-PROGRAM "C:\Git\Project-semester6\Source\Axman\CarNode\bin\Project.abs"
+PROGRAM "C:\Git Repo's\Project-semester6\Source\Axman\CarNode\bin\Project.abs"
 
 *********************************************************************************************
 TARGET SECTION
@@ -26,7 +26,7 @@ Entry point: 0xC029 (_Startup)
 _startupData is allocated at 0xC031 and uses 6 Bytes
 extern struct _tagStartup {
   unsigned nofZeroOut     0
-  _Copy    *toCopyDownBeg 0xC2CA
+  _Copy    *toCopyDownBeg 0xC2C5
 } _startupData;
 
 *********************************************************************************************
@@ -35,8 +35,8 @@ Section Name                    Size  Type     From       To       Segment
 ---------------------------------------------------------------------------------------------
 .init                             49     R     0xC000     0xC030   ROM_C000
 .startData                        10     R     0xC031     0xC03A   ROM_C000
-.text                            630     R     0xC03B     0xC2B0   ROM_C000
-.copy                              2     R     0xC2CA     0xC2CB   ROM_C000
+.text                            625     R     0xC03B     0xC2AB   ROM_C000
+.copy                              2     R     0xC2C5     0xC2C6   ROM_C000
 .stack                           256   R/W      0x800      0x8FF   RAM
 .abs_section_8                     1   N/I        0x8        0x8   .absSeg0
 .abs_section_9                     1   N/I        0x9        0x9   .absSeg1
@@ -259,11 +259,11 @@ Section Name                    Size  Type     From       To       Segment
 .abs_section_fc                    2   N/I       0xFC       0xFD   .absSeg218
 .abs_section_16e                   2   N/I      0x16E      0x16F   .absSeg219
 .abs_section_17e                   2   N/I      0x17E      0x17F   .absSeg220
-RUNTIME                           25     R     0xC2B1     0xC2C9   ROM_C000
+RUNTIME                           25     R     0xC2AC     0xC2C4   ROM_C000
 .vectSeg221_vect                   2     R     0xFFFE     0xFFFF   .vectSeg221
 
 Summary of section sizes per section type:
-READ_ONLY (R):         2CE (dec:      718)
+READ_ONLY (R):         2C9 (dec:      713)
 READ_WRITE (R/W):      100 (dec:      256)
 NO_INIT (N/I):         104 (dec:      260)
 
@@ -503,7 +503,7 @@ MODULE:                 -- mc9s12c32.c.o --
      _CANTXTSR                                  17E       2       2       0   .abs_section_17e
 MODULE:                 -- main.c.o --
 - PROCEDURES:
-     main                                      C03B     117     279       5   .text       
+     main                                      C03B     112     274       5   .text       
 - VARIABLES:
 MODULE:                 -- Start12.c.o --
 - PROCEDURES:
@@ -515,22 +515,22 @@ MODULE:                 -- Start12.c.o --
      __SEG_END_SSTACK                           900       0       0       1               
 MODULE:                 -- rtshc12.c.o (ansisi.lib) --
 - PROCEDURES:
-     _LSHL                                     C2B1      11      17       2   RUNTIME     
-     _COPY                                     C2C2       8       8       2   RUNTIME     
+     _LSHL                                     C2AC      11      17       2   RUNTIME     
+     _COPY                                     C2BD       8       8       2   RUNTIME     
 - VARIABLES:
 MODULE:                 -- CAN.c.o --
 - PROCEDURES:
-     MSCAN_Init                                C152      2A      42       1   .text       
-     MSCAN_Putd                                C17C      59      89       1   .text       
-     MSCAN_ListenForMsg                        C1D5      28      40       1   .text       
-     MSCAN_SetInitMode                         C1FD      1D      29       1   .text       
-     MSCAN_SetNormMode                         C21A      13      19       1   .text       
-     MSCAN_GotMsg                              C22D       7       7       1   .text       
-     MSCAN_Getd                                C234      47      71       1   .text       
+     MSCAN_Init                                C14D      2A      42       1   .text       
+     MSCAN_Putd                                C177      59      89       1   .text       
+     MSCAN_ListenForMsg                        C1D0      28      40       1   .text       
+     MSCAN_SetInitMode                         C1F8      1D      29       1   .text       
+     MSCAN_SetNormMode                         C215      13      19       1   .text       
+     MSCAN_GotMsg                              C228       7       7       1   .text       
+     MSCAN_Getd                                C22F      47      71       1   .text       
 - VARIABLES:
 MODULE:                 -- Elevator.c.o --
 - PROCEDURES:
-     CC_Status                                 C27B      36      54       3   .text       
+     CC_Status                                 C276      36      54       3   .text       
 - VARIABLES:
 
 *********************************************************************************************
@@ -538,7 +538,7 @@ MODULE STATISTIC
   Name                                      Data   Code  Const
 ---------------------------------------------------------------------------------------------
   mc9s12c32.c.o                              260      0      0
-  main.c.o                                     0    279      0
+  main.c.o                                     0    274      0
   Start12.c.o                                  0     49      0
   rtshc12.c.o (ansisi.lib)                     0     25      0
   CAN.c.o                                      0    297      0
@@ -1225,17 +1225,17 @@ OBJECT LIST SORTED BY ADDRESS
      _PPSAD                                     275       1       1       0   .abs_section_275
      Init                                      C000      29      41       1   .init       
      _Startup                                  C029       8       8       0   .init       
-     main                                      C03B     117     279       5   .text       
-     MSCAN_Init                                C152      2A      42       1   .text       
-     MSCAN_Putd                                C17C      59      89       1   .text       
-     MSCAN_ListenForMsg                        C1D5      28      40       1   .text       
-     MSCAN_SetInitMode                         C1FD      1D      29       1   .text       
-     MSCAN_SetNormMode                         C21A      13      19       1   .text       
-     MSCAN_GotMsg                              C22D       7       7       1   .text       
-     MSCAN_Getd                                C234      47      71       1   .text       
-     CC_Status                                 C27B      36      54       3   .text       
-     _LSHL                                     C2B1      11      17       2   RUNTIME     
-     _COPY                                     C2C2       8       8       2   RUNTIME     
+     main                                      C03B     112     274       5   .text       
+     MSCAN_Init                                C14D      2A      42       1   .text       
+     MSCAN_Putd                                C177      59      89       1   .text       
+     MSCAN_ListenForMsg                        C1D0      28      40       1   .text       
+     MSCAN_SetInitMode                         C1F8      1D      29       1   .text       
+     MSCAN_SetNormMode                         C215      13      19       1   .text       
+     MSCAN_GotMsg                              C228       7       7       1   .text       
+     MSCAN_Getd                                C22F      47      71       1   .text       
+     CC_Status                                 C276      36      54       3   .text       
+     _LSHL                                     C2AC      11      17       2   RUNTIME     
+     _COPY                                     C2BD       8       8       2   RUNTIME     
 
 *********************************************************************************************
 UNUSED-OBJECTS SECTION
@@ -1257,7 +1257,7 @@ rtshc12.c.o (ansisi.lib):
 *********************************************************************************************
 COPYDOWN SECTION
 ---------------------------------------------------------------------------------------------
-------- ROM-ADDRESS: 0xC2CA ---- SIZE       2 ---
+------- ROM-ADDRESS: 0xC2C5 ---- SIZE       2 ---
 Filling bytes inserted
  0000
 
@@ -1324,5 +1324,5 @@ STATISTIC SECTION
 ExeFile:
 --------
 Number of blocks to be downloaded: 6
-Total size of all blocks to be downloaded: 718
+Total size of all blocks to be downloaded: 713
 

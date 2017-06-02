@@ -8,15 +8,16 @@
 #define LED_BITS_MASK         (PTS_PTS2_MASK | PTS_PTS3_MASK)       // LED bits on port S
 #define LED_DDR_MASK          (DDRS_DDRS2_MASK | DDRS_DDRS3_MASK)   // DDR for LED bits on port S
 #define LED_BITS_INIT         PTS_PTS2_MASK     // initial value written to port S LED bits
-#define FLOOR_REQUESTED_LED_MASK 0b00000001
-#define FLOOR3_LED_MASK 0b00001000
-#define FLOOR2_LED_MASK 0b00000100
-#define FLOOR1_LED_MASK 0b00000010
-#define BUTTON_IS_PRESSED 0b10000000
-#define BUTTON2_IS_PRESSED 0b01000000
-#define LEDS_PORT_MASK 0b00001110  
+#define FLOOR_REQUESTED_LED_MASK 0b00000001 //floor 1 button pressed LED
+#define FLOOR3_LED_MASK 0b00001000 //floor 3 position in car LED
+#define FLOOR2_LED_MASK 0b00000100 //floor 2 position in car LED
+#define FLOOR1_LED_MASK 0b00000010 //floor 1 position in car LED
+#define BUTTON_IS_PRESSED 0b10000000 //Switch 1 on Axman
+#define BUTTON2_IS_PRESSED 0b01000000 //Switch 2 on Axman
+#define LEDS_PORT_MASK 0b00001110 //PORTA LED locations
+#define FLOOR_LOCATION_MASK 0b00000011 //mask to seperate enable bit from ID in CAN messages  
 
-uint_8 volatile floorLocation;
+uint_8 floorLocation;
 
 void main(void) {
    unsigned int volatile testVar = 0;
@@ -24,55 +25,44 @@ void main(void) {
 	CANmsg_t msg;
 	uint_8 buttonLock = 0;	
 	
-	msg.data[0] = 0xA5;
-	msg.id = 0x30;
-	msg.length = 0x01;
 	
-	PTS = LED_BITS_INIT;
-  DDRS  |= LED_DDR_MASK;
+  DDRS  |= LED_DDR_MASK; //Port S is output  
+  DDRJ = 0b00000000; //PortJ is input
+  DDRAD = 0b00000000; //PORTAD is input 
+	DDRA = 0b11111111; //PORTA is output 
   
-  DDRJ = 0b00000000;
+  ATDDIEN = 0b11111111; //enable PORTAD digital input
+  PTS = LED_BITS_INIT;  //init PORTS to turn on LED1
   
-	
-  MSCAN_Init();
+  MSCAN_Init(); //initialize CAN for 125kbps
+  MSCAN_ListenForMsg(EC_ID); //listen to EC messages  
   
-  DDRAD = 0b00000000;
-  ATDDIEN = 0b11111111;
-  DDRA = 0b11111111;
-  
-  MSCAN_ListenForMsg(0x101);
-  
-  //CANRIER = 0b00000001;
-  
-  //EnableInterrupts;  
-  
-  //i = MSCAN_Putd(msg,0x05);
   for (;;)
   {
-    if (((PTJ == BUTTON_IS_PRESSED) || (PTJ == BUTTON2_IS_PRESSED)) && buttonLock == 0)
+    if (((PTJ == BUTTON_IS_PRESSED) || (PTJ == BUTTON2_IS_PRESSED)) && buttonLock == 0) //floor 1 button pressed
       {
         PORTA |= FLOOR_REQUESTED_LED_MASK;
-        i = F1_Status(0x01);
+        i = F1_Status(REQUEST_CAR);
         buttonLock = 1;
       }
           
-    if (MSCAN_GotMsg())
+    if (MSCAN_GotMsg()) //received message from EC
       {
       PTS ^= LED_BITS_MASK;    
       msg = MSCAN_Getd();
       floorLocation = msg.data[0];
       
-      if ((floorLocation & 0b00000011) == 0x01)
+      if ((floorLocation & FLOOR_LOCATION_MASK) == FLOOR_1) //car is at floor one
         {
           FORCE_BITS(PORTA, LEDS_PORT_MASK, FLOOR1_LED_MASK); 
           PORTA &= ~FLOOR_REQUESTED_LED_MASK;
           buttonLock = 0;          
         }
-        else if ((floorLocation & 0b00000011) == 0x02)
+        else if ((floorLocation & FLOOR_LOCATION_MASK) == FLOOR_2) //car is at floor two
         {
           FORCE_BITS(PORTA, LEDS_PORT_MASK, FLOOR2_LED_MASK);          
         }
-        else if ((floorLocation & 0b00000011) == 0x03)
+        else if ((floorLocation & FLOOR_LOCATION_MASK) == FLOOR_3) //car is at floor three
         {
           FORCE_BITS(PORTA, LEDS_PORT_MASK, FLOOR3_LED_MASK);          
         }          
