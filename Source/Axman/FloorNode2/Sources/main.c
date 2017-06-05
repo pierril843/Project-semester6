@@ -42,7 +42,7 @@ void main(void) {
     if ((PTJ == BUTTON_IS_PRESSED) && buttonLock == 0) //floor 2 up button pressed
       {
         PORTA |= FLOOR_UP_REQUESTED_LED_MASK;
-        i = F2_Status(FLOOR_2);
+        i = F2_Status(REQUEST_CAR);
         buttonLock = 1;
       }
     if ((PTJ == BUTTON2_IS_PRESSED) && buttonLock == 0) //floor 2 down button pressed
