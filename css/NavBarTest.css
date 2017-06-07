@@ -1,0 +1,46 @@
+body{background-color: #fff4e6;
+    font-family: Helvetica, arial, sans-serif;
+    margin: auto;
+  padding: 10px 10px 10px 20px;}
+
+.navbar-inverse{background-color: #854442;
+            font-family: Helvetica, arial, sans-serif;
+          font-size: 125%;
+          color: black;
+        position: fixed;}
+
+.dropdown-menu{background-color: #854442;
+              color: white;}
+
+.nav.navbar-nav li a {color: #fff4e6;
+                      font-family: Helvetica, arial, sans-serif;}
+
+.navbar-inverse .navbar-brand {
+      color: #fff4e6;
+      font-family: Helvetica, arial, sans-serif;
+      font-size: 110%}
+
+#article1{background-color: #4b3832;
+    padding: 10px 10px 10px 10px;
+    color: #fff4e6;
+    border-radius: 16px;
+    box-shadow: 5px 5px 5px #888888;
+    margin-bottom: 15px;}
+
+#article2{background-color: #4b3832;
+    padding: 10px 10px 10px 10px;
+    color: #fff4e6;
+    border-radius: 16px;
+    box-shadow: 5px 5px 5px #888888;
+    margin-bottom: 15px;
+    width: 300px;}
+
+    #article3{background-color: #4b3832;
+        padding: 10px 10px 10px 10px;
+        color: #fff4e6;
+        border-radius: 16px;
+        box-shadow: 5px 5px 5px #888888;
+        margin-bottom: 15px;
+      width: 523px;}
+
+#content{margin: 75px 0px 0px 0px;}
