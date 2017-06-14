@@ -7,7 +7,7 @@ body{background-color: #fff4e6;
             font-family: Helvetica, arial, sans-serif;
           font-size: 125%;
           color: black;
-        position: fixed;}
+        position: relative;}
 
 .dropdown-menu{background-color: #854442;
               color: white;}
@@ -19,6 +19,9 @@ body{background-color: #fff4e6;
       color: #fff4e6;
       font-family: Helvetica, arial, sans-serif;
       font-size: 110%}
+.img-responsive {
+      margin: 10px 10px 10px 0px;
+}
 
 #article1{background-color: #4b3832;
     padding: 10px 10px 10px 10px;
@@ -33,14 +36,16 @@ body{background-color: #fff4e6;
     border-radius: 16px;
     box-shadow: 5px 5px 5px #888888;
     margin-bottom: 15px;
-    width: 300px;}
+    }
 
-    #article3{background-color: #4b3832;
+#article3{background-color: #4b3832;
         padding: 10px 10px 10px 10px;
         color: #fff4e6;
         border-radius: 16px;
         box-shadow: 5px 5px 5px #888888;
         margin-bottom: 15px;
-      width: 523px;}
-
-#content{margin: 75px 0px 0px 0px;}
+        }
+#sidebar {background-color: #854442;
+        padding: 10px 10px 10px 10px;
+        border-radius: 16px;
+        box-shadow: 5px 5px 5px #888888;}
