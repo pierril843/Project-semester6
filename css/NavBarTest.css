@@ -32,9 +32,16 @@ body{
 .img-responsive {
       margin: 10px 10px 10px 0px;
 }
+<<<<<<< Updated upstream
 .col-md-10 ,.col-lg-8{
     float: none;
     margin: 0 auto;
+=======
+
+.col-md-10 ,.col-lg-8, .col-sm-10 , .col-md-9, .col-lg-7{
+  float: none;
+  margin: 0 auto ;
+>>>>>>> Stashed changes
 }
 .navbar-nav {
     text-align: center;
