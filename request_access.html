@@ -6,10 +6,47 @@
   <meta http-equiv="pragma" content="no-cashe"  />
   <meta name="description" content="this is our request access page"/>
   <meta name="robots" content="noindex nofollow"/>
+  <meta charset="utf-8" />
+  <meta name = "viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="css/NavBarTest.css" type="text/css" rel="stylesheet" />
+  <link href="css/requestAccess.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
+  <nav class="navbar navbar-inverse">
+<div class="container-fluid">
+ <ul class="nav navbar-nav">
+   <li><a  href="#">J&hearts;R&hearts;R</a></li>
+   <li><a href="plan.html">Project Details</a></li>
+   <li><a href="#">Media</a></li>
+   <li><a href="request_access.html">Request Access</a></li>
+   <li class="dropdown">
+     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Logbooks
+     <span class="caret"></span></a>
+     <ul class="dropdown-menu">
+       <li><a href="Logbook/Joshlogbook.html">Josh's Logbook</a></li>
+       <li><a href="Logbook/Rileylogbook.html">Riley's Logbook</a></li>
+       <li><a href="Logbook/Ryanlogbook.html">Ryan's Logbook</a></li>
+     </ul>
+   </li>
+ </ul>
+ <ul class="nav navbar-nav navbar-right">
+    <li><a href="#"></span> Login</a></li>
+  </ul>
+</div>
+</nav>
+
+<div class="col-sm-12 col-md-10 col-lg-8 col-center">
+  <div class="col-sm-9 ">
+
+    <h2 class="title">Request Access</h2>
+    <div id="article1">
   <form action="php/req_access.php" method="post" >
-    <h1>Request Access</h1>
+    <fieldset>
     <p>Username:
       <input type="text" name="username" required/>
     </p>
@@ -40,11 +77,27 @@
     </p>
     <p>Tell us more</p>
     <textarea>...</textarea><br/>
-    <input type="submit" value="Submit Request" />
+    <input id="button" type="submit" value="Submit Request" />
+  </fieldset>
   </form>
-  <br />
-  <p>
+</div>
+</div>
+
+<div class="col-sm-3">
+  <h2 class="title">Images</h2>
+  <div id="sidebar" class="center-block">
+    <img class="img-responsive" src="Images/Riley.jpg" alt="Chania">
+    <img class="img-responsive" src="Images/Riley.jpg" alt="Chania">
+    <img class="img-responsive" src="Images/Riley.jpg" alt="Chania">
+    <img class="img-responsive" src="Images/Riley.jpg" alt="Chania">
+  </div>
+</div>
+</div>
+
+<div class="col-sm-12">
+  <div id="article1">
     This Page is &copy By JRR
-  </p>
+  </div>
+</div>
 </body>
 </html>

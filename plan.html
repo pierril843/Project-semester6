@@ -6,10 +6,45 @@
     <meta http-equiv="pragma" content="no-cashe"  />
     <meta name="description" content="this page is about our plan for poject"/>
     <meta name="robots" content="noindex nofollow"/>
-    <link href="css/plan.css" type="text/css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name = "viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="css/NavBarTest.css" type="text/css" rel="stylesheet" />
+    <link href="css/plan.css" type="text/css" rel="stylesheet" />    
   </head>
   <body>
-    <h1>Phases</h1>
+
+    <nav class="navbar navbar-inverse">
+ <div class="container-fluid">
+   <ul class="nav navbar-nav">
+     <li><a  href="#">J&hearts;R&hearts;R</a></li>
+     <li><a href="plan.html">Project Details</a></li>
+     <li><a href="#">Media</a></li>
+     <li><a href="request_access.html">Request Access</a></li>
+     <li class="dropdown">
+       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Logbooks
+       <span class="caret"></span></a>
+       <ul class="dropdown-menu">
+         <li><a href="Logbook/Joshlogbook.html">Josh's Logbook</a></li>
+         <li><a href="Logbook/Rileylogbook.html">Riley's Logbook</a></li>
+         <li><a href="Logbook/Ryanlogbook.html">Ryan's Logbook</a></li>
+       </ul>
+     </li>
+   </ul>
+   <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"></span> Login</a></li>
+    </ul>
+ </div>
+</nav>
+
+<div class="col-sm-12 col-md-10 col-lg-8 col-center">
+  <div class="col-sm-9 ">
+    <h2 class="title">Phases</h2>
+      <div id="article1">
     <ul>
       <li>Phase 1</li>
       <ul>
@@ -28,10 +63,31 @@
         <li>Design CAN communication protocol and compare with other groups (All)</li>
       </ul>
       <li>Phase 2</li>
+      <ul>
+        <li>Research and Implement Data base system (Riley)</li>
+        <li>Setup communications between python SV and database (Riley)</li>
+        <li>Modify SV code to use Database as source for state status (Riley)</li>
+        <li>Test updated system (change state on database side and observe the system reaction) (Riley)</li>
+        <li>Add ability to change database with PHP scripts running on the web server (Riley)</li>
+        <li>Initial concept design of elevator control panel user interface (Josh)</li>
+        <li>Construct the designed web interface above (Josh)</li>
+        <li>Write javascript code for updating current state of elevator – floor position, etc (Josh)</li>
+        <li>Write php code to communicate requested floor to server (Josh)</li>
+        <li>Test proper operation of website and server functions (Josh)</li>
+        <li>Initial designs for website style (Ryan)</li>
+        <li>Style all website pages (Ryan)</li>
+        <li>Create client HTML page for displaying elevator diagnostics (Ryan)</li>
+        <li>Write javascript code for updating current state of elevator (Ryan)</li>
+        <li>Test proper operation of website and server functions (Ryan)</li>
+        <li>Integration of all three systems (All)</li>
+        <li>Integration testing of all three systems (All)</li>
+      </ul>
       <li>Phase 3</li>
     </ul>
-    <hr />
-    <h2>Week tasks</h2>
+  </div>
+
+    <h2 class="title">Week tasks</h2>
+    <div id="article1">
     <ul>
       <li>End of Week <b>May 19th</b> Requirements</li>
       <ul>
@@ -47,14 +103,52 @@
       </ul>
       <li>End of Week <b>June 2nd</b> Requirements</li>
       <ul>
-        <li>Functions created and tested for floor nodes</li>
-        <li>Functions created and tested for car node</li>
-        <li>Functions created and tested for computer node</li>
+        <li>Integration of completed nodes to full CAN bus</li>
+        <li>Demonstrations of fully working CAN system</li>
+      </ul>
+      <li>End of Week <b>June 16th</b> Requirements</li>
+      <ul>
+        <li>Phase 2 plans</li>
+      </ul>
+      <li>End of Week <b>June 23rd</b> Requirements</li>
+      <ul>
+        <li>Initial concept design of elevator control panel user interface</li>
+        <li>Initial designs for website style</li>
+        <li>Research and Implement Data base system</li>
+      </ul>
+      <li>End of Week <b>June 30th</b> Requirements</li>
+      <ul>
+        <li>Construct the designed web interface above</li>
+        <li>Style all website pages</li>
+        <li>Setup communications between python SV and database</li>
+      </ul>
+      <li>End of Week <b>July 7th</b> Requirements</li>
+      <ul>
+        <li>Write javascript code for updating current state of elevator – floor position, etc</li>
+        <li>Create client HTML page for displaying elevator diagnostics</li>
+        <li>Modify SV code to use Database as source for state status</li>
+      </ul>
+      <li>End of Week <b>July 14th</b> Requirements</li>
+      <ul>
+        <li>Write php code to communicate requested floor to server</li>
+        <li>Write javascript code for updating current state of elevator</li>
+        <li>Test updated system (change state on database side and observe the system reaction)</li>
+      </ul>
+      <li>End of Week <b>July 21st</b> Requirements</li>
+      <ul>
+        <li>Test proper operation of website and server functions</li>
+        <li>Add ability to change database with PHP scripts running on the web server</li>
+      </ul>
+      <li>End of Week <b>July 28th</b> Requirements</li>
+      <ul>
+        <li>Integration of all three systems</li>
+        <li>Integration testing of all three systems</li>
       </ul>
     </ul>
+  </div>
 
-    <br />
-    <hr />
+    <h2 class="title">Gantt Chart</h2>
+    <div id="article1">
     <table>
       <thead>
         <tr>
@@ -193,21 +287,38 @@
         </tr>
       </tbody>
     </table>
-    <hr />
-    <h3> System Block Diagram </h3>
+  </div>
+
+    <h2 class="title"> System Block Diagram </h2>
+    <div id="article1">
     <figure>
       <img src="Images/SystemBlockDiagram.jpg" width="600" />
     </figure>
-    <hr />
-    <h4> Protocol Block Diagram </h4>
+  </div>
+    <h2 class="title"> Protocol Block Diagram </h2>
+    <div id="article1">
     <figure>
       <img src="Images/ProtocolDiagram.jpg" width="800" />
     </figure>
+  </div>
+    </div><!-- id=content -->
 
+    <div class="col-sm-3">
+      <h2 class="title">Images</h2>
+      <div id="sidebar" class="center-block">
+        <img class="img-responsive" src="Images/Riley.jpg" alt="Chania">
+        <img class="img-responsive" src="Images/Riley.jpg" alt="Chania">
+        <img class="img-responsive" src="Images/Riley.jpg" alt="Chania">
+        <img class="img-responsive" src="Images/Riley.jpg" alt="Chania">
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-12">
+    <div id="article1">
+      This Page is &copy By JRR
+    </div>
+  </div>
 
   </body>
-  <br />
-  <p>
-    This Page is &copy By JRR
-  </p>
 </html>
