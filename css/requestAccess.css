@@ -3,3 +3,26 @@
     background-color: #fff4e6;
     color: #3c2f2f;
 }
+
+input{
+    color: #3c2f2f;
+}
+textarea{
+    color: #3c2f2f;
+}
+select{
+    color: #3c2f2f;
+}
+
+.text_label{
+    float: left;
+    width: 100px;
+    text-align: right;
+    padding: 0px 10px 0px 0px;
+}
+
+.text_input{
+    width: 150;
+    text-align: left;
+    padding: 0px 0px 0px 10px;
+}

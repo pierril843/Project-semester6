@@ -45,41 +45,175 @@
 
     <h2 class="title">Request Access</h2>
     <div id="article1">
-  <form action="php/req_access.php" method="post" >
-    <fieldset>
-    <p>Username:
-      <input type="text" name="username" required/>
-    </p>
-    <p>Password:
-      <input type = "password" name="password" required/>
-    </p>
-    <p>Gender:</p>
-    <p>
-      <input type="radio" name="gender" value="male"/>Male
-      <input type="radio" name="gender" value="female"/>Female
-      <input type="radio" name="gender" value="N/A"/>N/A
-    </p>
-    <p>Underling To:</p>
-    <select name="responsibility">
-      <option value="N/A">N/A</option>
-      <option value="Riley">Riley</option>
-      <option value="Josh">Josh</option>
-      <option value="Ryan">Ryan</option>
-    </select>
-    <p>How Did you Hear About Us</p>
-    <p>
-      <input type="checkbox" name="refered" value="project"/>Previous project work <br/>
-      <input type="checkbox" name="refered" value="coop"/>Previous coop placments<br/>
-      <input type="checkbox" name="refered" value="overwatch"/>You were destroyed by us in Overwatch<br/>
-      <input type="checkbox" name="refered" value="riley"/>You have heard of Riley's greatness and would like to join the cause<br/>
-      <input type="checkbox" name="refered" value="josh"/>You have heard of Josh's greatness and would like to join the cause<br/>
-      <input type="checkbox" name="refered" value="ryan"/>You have heard of Ryan's greatness and would like to join the cause<br/>
-    </p>
-    <p>Tell us more</p>
-    <textarea>...</textarea><br/>
-    <input id="button" type="submit" value="Submit Request" />
-  </fieldset>
+      <form class="form-horizontal" action="/action_page.php">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="firstname">First Name:</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="fName" placeholder="John" name="firstname">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="lastname">Last Name:</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="lName" placeholder="Smith" name="lastname">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Email:</label>
+      <div class="col-sm-7">
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Password:</label>
+      <div class="col-sm-7">
+        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="web">Website:</label>
+      <div class="col-sm-7">
+        <input type="url" class="form-control" id="web" placeholder="www.you.com" name="web">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Date:</label>
+      <div class="col-sm-7">
+        <input type="date" class="form-control" id="pwd" name="birthday">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2 col-sm-offset-2">
+        <div>
+          <input type="radio" name="optradio">Option 1</label>
+        </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2 col-sm-offset-2">
+        <div>
+          <input type="radio" name="optradio">Option 2</label>
+        </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2 col-sm-offset-2">
+        <div>
+          <input type="radio" name="optradio">Option 3</label>
+        </div>
+    </div>
+    <div class="dropdown">
+      <p class="form_title">Dropdown Title:</p>
+      <select name="responsibility">
+        <option value="N/A">N/A</option>
+        <option value="Riley">Riley</option>
+        <option value="Josh">Josh</option>
+        <option value="Ryan">Ryan</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label><input type="checkbox" value="">Option 1</label>
+      <label><input type="checkbox" name="refered" class="multi_box" value="project"/>Previous Project<br/></label>
+      <label><input type="checkbox" name="refered" class="multi_box" value="coop"/>Previous coop placments<br/></label>
+      <label><input type="checkbox" name="refered" class="multi_box" value="overwatch"/>You were destroyed by us in Overwatch<br/></label>
+      <label><input type="checkbox" name="refered" class="multi_box" value="riley"/>You have heard of Riley's greatness and would like to join the cause<br/></label>
+      <label><input type="checkbox" name="refered" class="multi_box" value="josh"/>You have heard of Josh's greatness and would like to join the cause<br/></label>
+      <label><input type="checkbox" name="refered" class="multi_box" value="ryan"/>You have heard of Ryan's greatness and would like to join the cause<br/></label>
+    </div>
+
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+    </div>
   </form>
+
+        <!--contact information form-->
+        <div id="contact">
+          <p class="form_title">Contact Details</p>
+          <div>
+            <label for="fName" class= "text_label">First Name:</label>
+             <input id="fName" type="text" class="text_input" name="firstname"/>
+          </div>
+          <div>
+            <label for="lName" class="text_label">Last Name:</label>
+            <input id="lName" type="text" class="text_input" name="lastname"/>
+          </div>
+          <div>
+            <label for="email" class="text_label">Email:</label>
+            <input id="email" type="email" class="text_input" name="email"/>
+          </div>
+          <div>
+            <label for="website" class="text_label">Website:</label>
+            <input id="website" type="url" class="text_input" name="url"/>
+          </div>
+          <div>
+            <label for="bDay" class="text_label">Birth Date:</label>
+            <input id="bDay" type="date" class="text_input" name="birthday"/>
+          </div>
+        </div>
+
+        <!--radio buttons-->
+        <div id="radio">
+          <p class="form_title">Radio Title:</p>
+          <div>
+            <input id="radio1" type="radio" name="radio" class="radio_input" value="radio1"/><!--value parameter is value sent to the server-->
+            <label for="radio1" class="radio_label">Radio 1</label>
+          </div>
+          <div>
+            <input id="radio2" type="radio" name="radio" class="radio_input" value="radio2"/>
+            <label for="radio2" class="radio_label">Radio 2</label>
+          </div>
+          <div>
+            <input id="radio3" type="radio" name="radio" class="radio_input" value="radio3"/>
+            <label for="radio3" class="radio_label">Radio 3</label>
+          </div>
+        </div>
+
+        <!--dropdown menu-->
+        <div class="dropdown">
+          <p class="form_title">Dropdown Title:</p>
+          <select name="responsibility">
+            <option value="N/A">N/A</option>
+            <option value="Riley">Riley</option>
+            <option value="Josh">Josh</option>
+            <option value="Ryan">Ryan</option>
+          </select>
+        </div>
+
+          <!--multi select menu-->
+        <div id="multi">
+          <p class="form_title">Multi Select Title</p>
+          <div>
+            <label><input type="checkbox" name="refered" class="multi_box" value="project"/>Previous Project<br/></label>
+          </div>
+          <div>
+            <label><input type="checkbox" name="refered" class="multi_box" value="coop"/>Previous coop placments<br/></label>
+          </div>
+          <div>
+            <label><input type="checkbox" name="refered" class="multi_box" value="overwatch"/>You were destroyed by us in Overwatch<br/></label>
+          </div>
+          <div>
+            <label><input type="checkbox" name="refered" class="multi_box" value="riley"/>You have heard of Riley's greatness and would like to join the cause<br/></label>
+          </div>
+          <div>
+            <label><input type="checkbox" name="refered" class="multi_box" value="josh"/>You have heard of Josh's greatness and would like to join the cause<br/></label>
+          </div>
+          <div>
+            <label><input type="checkbox" name="refered" class="multi_box" value="ryan"/>You have heard of Ryan's greatness and would like to join the cause<br/></label>
+          </div>
+        </div>
+
+        <!--text area menu-->
+        <div id="textarea">
+          <p>Text Area Title</p>
+          <textarea>Hello World...</textarea><br/>
+        </div>
+
+        <!--submit button-->
+        <input type="submit" class="push_button" value="Submit Request"/>
+
+        </form>
 </div>
 </div>
 
