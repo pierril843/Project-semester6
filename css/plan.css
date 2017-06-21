@@ -32,6 +32,9 @@ body{
 .title{
     color: #3c2f2f;
 }
+.footer{
+    margin-right: 10px;
+}
 
 p,ul {font-size: 100%;
       line-height: 20px;

@@ -1,7 +1,14 @@
-#button{
+.button{
     float: right;
     background-color: #fff4e6;
     color: #3c2f2f;
+}
+#button2{  
+  color: #3c2f2f;
+}
+#button2:hover{
+  background-color: #854442;
+  color: #3c2f2f;
 }
 
 input{

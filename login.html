@@ -6,19 +6,68 @@
     <meta http-equiv="pragma" content="no-cashe"  />
     <meta name="description" content="this page is about our login page"/>
     <meta name="robots" content="noindex nofollow"/>
+    <meta charset="utf-8" />
+    <meta name = "viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="css/HomePage.css" type="text/css" rel="stylesheet" />
+    <link href="css/requestAccess.css" type="text/css" rel="stylesheet" />
   </head>
   <body>
+
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+   <ul class="nav navbar-nav">
+     <li><a href="HomePage.html">J&hearts;R&hearts;R</a></li>
+     <li><a href="plan.html">Project Details</a></li>
+     <li><a href="media.html">Media</a></li>
+     <li><a href="request_access.html">Request Access</a></li>
+     <li class="dropdown">
+       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Logbooks
+       <span class="caret"></span></a>
+       <ul class="dropdown-menu">
+         <li><a href="Logbook/Joshlogbook.html">Josh's Logbook</a></li>
+         <li><a href="Logbook/Rileylogbook.html">Riley's Logbook</a></li>
+         <li><a href="Logbook/Ryanlogbook.html">Ryan's Logbook</a></li>
+       </ul>
+     </li>
+   </ul>
+   <ul class="nav navbar-nav navbar-right">
+      <li><a href="login.html"></span> Login</a></li>
+    </ul>
+  </div>
+  </nav>
+
+  <div class="col-sm-12">
+    <h1>Please log in</h1>
     <form action="php/login.php" method="post" id="login">
-      <h1>Please log in</h1>
-      <p>Username:
-        <input type="text" name="username" required/>
-      </p>
-      <p>Password:
-        <input type = "password" name="password" required/>
-      </p>
-      <input type="submit" value="Log in" />
-      <p><a href="request_access.html">Request a login</a></p>
+
+      <div id="article1">
+        <form class="form-horizontal" action="/action_page.php">
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="firstname">Userame:</label>
+        <div class="col-sm-12">
+          <input type="text" class="form-control" id="fName" placeholder="John@Doe.com" name="firstname">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="pwd">Password:</label>
+        <div class="col-sm-12">
+          <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+        </div>
+      </div>
+    </div>
+    <div class="button">
+    <input type="submit" class="btn btn-default" value="Log in" />
+  </div>
+    <a href="request_access.html" id="button2" class="btn btn-default" role="button">Request Login</a>
+
     </form>
+  </div>
     <br />
     <p>
       This Page is &copy By JRR
