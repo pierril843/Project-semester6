@@ -6,8 +6,4 @@ function textCounter()
  textareacount.textContent = (textarea.maxLength - textarea.textLength);
 }
 
-
-textarea = document.getElementById('textareaid');
-textareacount = document.getElementById('textareacount');
-
 textarea.onkeypress = function(){textCounter()};
