@@ -45,7 +45,7 @@
 
     <h2 class="title">Request Access</h2>
     <div id="article1">
-      <form class="form-horizontal" action="/action_page.php">
+      <form class="form-horizontal" name="myForm" action="/action_page.php">
     <div class="form-group">
       <label class="control-label col-sm-2" for="firstname">First Name:</label>
       <div class="col-sm-7">
@@ -73,13 +73,13 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="web">Website:</label>
       <div class="col-sm-7">
-        <input type="url" class="form-control" id="web" placeholder="www.you.com" name="web">
+        <input type="text" class="form-control" id="web" placeholder="www.you.com" name="web">
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Date:</label>
+      <label class="control-label col-sm-2" for="date">Date:</label>
       <div class="col-sm-7">
-        <input type="date" class="form-control" id="pwd" name="birthday">
+        <input type="date" class="form-control" id="date" name="birthday">
       </div>
     </div>
     <div class="form-group">
@@ -111,7 +111,6 @@
     </div>
 
     <div class="form-group">
-      <label><input type="checkbox" value="">Option 1</label>
       <label><input type="checkbox" name="refered" class="multi_box" value="project"/>Previous Project<br/></label>
       <label><input type="checkbox" name="refered" class="multi_box" value="coop"/>Previous coop placments<br/></label>
       <label><input type="checkbox" name="refered" class="multi_box" value="overwatch"/>You were destroyed by us in Overwatch<br/></label>
@@ -120,13 +119,19 @@
       <label><input type="checkbox" name="refered" class="multi_box" value="ryan"/>You have heard of Ryan's greatness and would like to join the cause<br/></label>
     </div>
 
-
+    <div id="textarea">
+      <p>Text Area Title</p>
+      <textarea id="textareaid" maxlength="100">Hello World...</textarea>
+      <p id="textareacount">100</p>
+      <br/>
+    </div>
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-default" id="submitButton">Submit</button>
       </div>
     </div>
   </form>
+  <script src="js/request_access.js"></script>
 
         <!--contact information form-->
         <div id="contact">
@@ -202,15 +207,6 @@
           <div>
             <label><input type="checkbox" name="refered" class="multi_box" value="ryan"/>You have heard of Ryan's greatness and would like to join the cause<br/></label>
           </div>
-        </div>
-
-        <!--text area menu-->
-        <div id="textarea">
-          <p>Text Area Title</p>
-          <textarea id="textareaid" maxlength="100">Hello World...</textarea>
-          <p id="textareacount">100</p>
-          <script src="js/request_access.js"></script>
-          <br/>
         </div>
 
         <!--submit button-->

@@ -19,5 +19,5 @@ function checkInputes(event)
 }
 
 var button = document.getElementById("submitButton");
-
+document.getElementById("username").focus();
 button.addEventListener("click", function(event){checkInputes(event)},false);
