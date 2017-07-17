@@ -20,8 +20,6 @@ th {text-align: left;}
 <?php
 	//session_start();
 
-	$q = intval($_POST['q']);
-
 	//if(isset($_SESSION['username'])){
         //echo "<h2>Welcome to the Members Only Page {$_SESSION['username']}! </h2>";
         $db = new PDO(
@@ -37,7 +35,7 @@ th {text-align: left;}
       //}
 
 //mysqli_select_db($con,"ajax_demo");
-$loggerRows = $db->query('SELECT * FROM Logger ORDER BY Timestamp');
+$loggerRows = $db->query('SELECT * FROM Logger ORDER BY Timestamp DESC');
 //$result = mysqli_query($con,$sql);
 
 echo "<table>
@@ -57,8 +55,8 @@ foreach($loggerRows as $loggerRow) {
     echo "<td>" . $loggerRow[2] . "</td>";
     echo "<td>" . $loggerRow[3] . "</td>";
     echo "<td>" . $loggerRow[4] . "</td>";
-    echo "<td>" . $loggerRow[4] . "</td>";
-    echo "<td>" . $loggerRow[4] . "</td>";
+    echo "<td>" . $loggerRow[5] . "</td>";
+    echo "<td>" . $loggerRow[6] . "</td>";
     echo "</tr>";
 }
 echo "</table>";

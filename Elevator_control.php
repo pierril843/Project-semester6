@@ -86,7 +86,7 @@
           $params = [
             //'date' => $curr_date['CURRENT_DATE()'],
             'time' => $curr_time['NOW()'],
-            'message' => 'floor 3 requested the elevator',
+            'message' => 'Floor 3 requested the elevator',
             'sender' => 'Web',
             'receiver' => 'SV',
             'localaccess' => 0,
@@ -108,7 +108,7 @@
           $params = [
             //'date' => $curr_date['CURRENT_DATE()'],
             'time' => $curr_time['NOW()'],
-            'message' => 'floor 2 requested the elevator',
+            'message' => 'Floor 2 requested the elevator',
             'sender' => 'Web',
             'receiver' => 'SV',
             'localaccess' => 0,
@@ -130,7 +130,7 @@
           $params = [
             //'date' => $curr_date['CURRENT_DATE()'],
             'time' => $curr_time['NOW()'],
-            'message' => 'floor 1 requested the elevator',
+            'message' => 'Floor 1 requested the elevator',
             'sender' => 'Web',
             'receiver' => 'SV',
             'localaccess' => 0,
@@ -210,8 +210,61 @@
       </div>
     </fieldset>
   </form>
+  <?php
+      $rows = $db->query('SELECT * FROM State ORDER BY Timestamp DESC LIMIT 1');
 
-  <script src="js/login.js"></script>
+	foreach($rows as $row)
+	{
+	echo "<h2>Current Elevator State</h2>";
+	echo "<div>";
+
+	if ($row[0] == 0)
+	{
+		echo "<p id=carStateDisplay>Car is currently at floor $row[1]</p>";
+	}
+	else
+	{
+		echo "<p id=carStateDisplay>Car is currently in transit</p>";
+	}
+
+	if ($row[2] == 1)
+	{
+		echo "<p id=doorStateDisplay>Door is open</p>";
+	}
+	else
+	{
+		echo "<p id=doorStateDisplay>Door is closed</p>";
+	}
+
+	echo "<p id=timeStampDisplay>Timestamp of message is $row[3]</p>";
+	echo "</div>";
+	}
+	?>
+
+  <div id="txtHint"><b>Person info will be listed here...</b></div>
+
+  <script>
+  function showUser() {
+          if (window.XMLHttpRequest) {
+              // code for IE7+, Firefox, Chrome, Opera, Safari
+              xmlhttp = new XMLHttpRequest();
+          } else {
+              // code for IE6, IE5
+              xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          xmlhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                  document.getElementById("txtHint").innerHTML = this.responseText;
+              }
+          };
+          xmlhttp.open("POST","getuser.php",true);
+          xmlhttp.send();
+      }
+
+
+  	setInterval(showUser,1000);
+  </script>
+
   </div>
   </body>
 </html>
