@@ -282,11 +282,87 @@
         <div id="article1">
           <article>
             <h3>Work Done</h3>
+            <ul>
+              <li>
+                Completed design document for mysql logger and state tables. The state table will hold the current state of the evevator when mysql is accessible. When its not SV will run with internal states for the elevator. SV will be the only interface to the sql server that will be able to modify the state.
+              </li>
+            </ul>
             <h3>Work For Next Week</h3>
+            <ul>
+              <li>
+                Sync up with ryan and josh on how to use my database So they can start working on thier end.
+              </li>
+            </ul>
           </article>
         </div>
 
         <h2 id="week8">Week 8</h2>
+        <div id="article1">
+          <article>
+            <h3>Work Done</h3>
+            <ul>
+              <li>
+                Week skipped due to midterms and canada weekend plans
+              </li>
+            </ul>
+          </article>
+        </div>
+
+        <h2 id="week9">Week 9</h2>
+        <div id="article1">
+          <article>
+            <h3>Work Done</h3>
+            <ul>
+              <li>
+                Worked with ryan and josh on getting them up to speed with my ver of the data base.
+              </li>
+              <li>
+                Begin testing on my class update made at the end of phase 1.
+              </li>
+              <li>
+                Found that the state variable "modified by" on the sql database is repetitive since you can just place new messages on the logger. Then periodically check a filtered queue of messages with the local access flag 0.
+              </li>
+            </ul>
+            <h3>Work For Next Week</h3>
+            <ul>
+              <li>
+                Start playing around with the mysql libraries out there. Atleast be able to shell the connection.
+              </li>
+            </ul>
+          </article>
+        </div>
+
+        <h2 id="week10">Week 10</h2>
+        <div id="article1">
+          <article>
+            <h3>Work Done</h3>
+            <ul>
+              <li>
+                Found a new and better way to copy database files from one host to another. <a href="https://dev.mysql.com/doc/refman/5.7/en/mysqldump-copying-to-other-server.html">Link</a>
+              </li>
+              <li>
+                Completed all testing for the upgraded SV supervisor. Changes made include use of classes and reorganized my work. Scope was the only real isuse i ran into because i was moving main code to functions where scope is limited to that class.
+              </li>
+            </ul>
+            <figure>
+              <a href="../Images/DeepinScreenshot20170716175327.png">
+                <img src="../Images/DeepinScreenshot20170716175327.png" alt="mysql tests" title="mysql tests" width=100% />
+              </a>
+              <figcaption>Picture of me playing around accessing mysql database. Connect, Queue, then use fetch to work with row</figcaption>
+            </figure>
+            <h3>Work For Next Week</h3>
+            <ul>
+              <li>
+                Have my SV start to pull for states.
+              </li>
+              <li>
+                Find out a way to just have it queue periodically for updates to the logger and be able to filter.
+              </li>
+            </ul>
+          </article>
+        </div>
+
+        <h2 id="week11">Week 11</h2>
         <div id="article1">
           <article>
             <h3>Work Done</h3>
