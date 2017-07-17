@@ -16,7 +16,11 @@
         ''
         );
         // Sign out
-        echo "<br /><p>Click to <a href='login.html'>Logout</a></p>";
+        echo "<br /><p>Click to <a href='logout.php'>Logout</a></p>";
+        // Sign out
+        echo "<br /><p>Click to go to <a href='Elevator_control.php'>Elevator Control Panel</a></p>";
+        // Sign out
+        echo "<br /><p>Click to go to <a href='Diagnostic.php'>Diagnostic Panel</a></p>";
       }
       else {
         echo "<p>You are not authorized!</p>";
