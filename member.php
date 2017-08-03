@@ -11,7 +11,7 @@
       if(isset($_SESSION['username'])){
         echo "<h2>Welcome to the Members Only Page {$_SESSION['username']}! </h2>";
         $db = new PDO(
-        'mysql:host=127.0.0.1;dbname=elevatorDB',
+        'mysql:host=127.0.0.1;dbname=Assignment2',
         'root',
         ''
         );
@@ -39,24 +39,37 @@
 
       if(isset($_SESSION['username']) && ((isset($_POST['nodeID']) == FALSE) && (isset($_POST['status'])) && (isset($_POST['currentFloor'])) && (isset($_POST['requestedFloor'])))) {
         $query = 'INSERT INTO elevatorStates (date,time,status,currentFloor,requestedFloor)
-                  VALUES(:date,:time,:status,:currentFloor,:requestedFloor)';
+                  VALUES (:date,:time,:status,:currentFloor,:requestedFloor)';
         $statement = $db->prepare($query);
-        $curr_date_query = $db->query('Select CURRENT_DATE()');
+        $curr_date_query = $db->query('SELECT CURRENT_DATE()');
         $curr_date = $curr_date_query->fetch(PDO::FETCH_ASSOC);
         $curr_time_query = $db->query('SELECT CURRENT_TIME()');
         $curr_time = $curr_time_query->fetch(PDO::FETCH_ASSOC);
         $status = $_POST['status'];
         $currentFloor = $_POST['currentFloor'];
         $requestedFloor = $_POST['requestedFloor'];
-
+        /*
         $params = [
           'date' => $curr_date['CURRENT_DATE()'],
           'time' => $curr_time['CURRENT_TIME()'],
           'status' => $status,
           'currentFloor' => $currentFloor,
-          'requestedFloor' => $requestedFloor,
+          'requestedFloor' => $requestedFloor
         ];
+        */
+        $params = [
+          'date' => "2030-03-20",
+          'time' => "23:12:04",
+          'status' => 1,
+          'currentFloor' => 3,
+          'requestedFloor' => 5
+        ];
+
+        print_r ($params);
         $result = $statement->execute($params);
+
+        echo "<p>The result is:$result</p>";
+        var_dump($result);
       }
 
       $rows = $db->query('SELECT * FROM elevatorStates ORDER BY nodeID');
@@ -71,7 +84,8 @@
       <input type="submit" value="Update database" />
     </form>
     <?php
-      /*function update_elevatorStates(int $nodeID, int $status, int $currentFloor, int $requestedFloor): void {
+      /*
+      function update_elevatorStates(int $nodeID, int $status, int $currentFloor, int $requestedFloor): void {
         $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
         $query = 'UPDATE elevatorStates
@@ -107,6 +121,7 @@
       $statement->bindValue('req',$requestedFloor);
       $statement->bindValue('id',$nodeID);
       $statement->execute();
+
       echo "<p>Finished Executing</p>";
       }
     ?>
